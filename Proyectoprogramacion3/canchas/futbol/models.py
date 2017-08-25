@@ -5,22 +5,20 @@ from django.db import models
 
 # Create your models here.
 class Lugar(models.Model):
-    nombre = models.CharField(max_legth=30)
+    nombre = models.CharField(max_length=30)
     cantidad_de_cancha = models.IntegerField()
     tipo_de_cancha = models.IntegerField()
-    servicios = models.CharField()
+    servicios = models.CharField(max_length=30)
     telefono = models.IntegerField()
     horario = models.IntegerField()
     
 
-class Cancha(models.model):
+class Cancha(models.Model):
     lugar=models.ForeignKey(Lugar)
     numero_de_cancha = models.IntegerField()
-    tipo = models.CharField()
+    tipo = models.CharField(max_length=30)
     precio = models.IntegerField()
     
-class Resevacion(models.model):
-    id_reservacion = models.PrimaryKey()
-    cancha = models.ForeingKey(Cancha)
-    fecha = models.DataTime()
-    
+class Reservacion(models.Model):
+    cancha = models.ForeignKey(Cancha)
+    fecha = models.DateTimeField()
