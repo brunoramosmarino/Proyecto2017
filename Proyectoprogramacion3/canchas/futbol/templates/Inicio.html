@@ -1,0 +1,35 @@
+<html>
+    <head>
+          <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <!-- icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    </head>
+  <body class="blue-grey darken-1">
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper blue-grey darken-4">
+              <center><a href="{% url 'index' %}" class="brand-logo"><img src="https://img.clipartfest.com/1da2ee5fa56ec8c9cd9fd88c4635566c_bird-logo-on-behance-clipart-bird-logo_600-418.png" width="90" height="62.7" ></a></center>
+            <ul class="right hide-on-med-and-down">
+              <li><a>User : {{ user|upper }}</a></li>
+              <li><a href="#modal1">Write</a></li>
+              <!-- arrerglar -->
+              {% if not user.is_authenticated %}              
+                <li><a href="">Login</a></li>
+              {% else %}
+                <li><a href="">Logout</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>     
+    </body>
+</html>
