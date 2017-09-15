@@ -18,6 +18,7 @@ from django.contrib import admin
 from futbol.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name='admin'),
-    url(r'^$', Login),
+    url(r'^$', Createuser),
     url(r'^inicio/', Inicio),
+    url(r'^hola/$', Createusers,name='create'),
 ]
