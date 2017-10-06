@@ -27,6 +27,9 @@ def Inicio(request):
 def Createuser(request):
     return render (request, 'createuser.html')
 
+def Lugar(request):
+    return render (request, 'Lugar.html')
+
 def Createusers (request):
     name=request.POST["usuario"]
     password=request.POST["contrasenia"]
@@ -35,3 +38,4 @@ def Createusers (request):
     user = User.objects.create_user(name, password, mail)
     user.save()
     return render (request, 'createuser.html')
+
