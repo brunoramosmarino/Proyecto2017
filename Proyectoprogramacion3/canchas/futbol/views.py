@@ -21,18 +21,27 @@ from .models import *
 
 # Create your views here.
 
-def Inicio(request):
+def inicio(request):
     return render(request , 'inicio.html')
 
-def Createuser(request):
-    lug = Lugar(nombre="Lol 3", cantidad_de_cancha=89, tipo_de_cancha = 1, servicios = "La Dota", telefono=1321654)
-    lug.save()
+def createuser(request):
+
     return render (request, 'createuser.html')
 
-def Lugar(request):
+def lugar(request):
+    return render (request, 'Lugar.html')
+def createlugar(request):
+    nombre=request.POST['nombre_de_lugar']
+    cantidad=request.POST['cantidad_de_canchas']
+    tipo=request.POST['tipo_de_canchas']
+    telefono=request.POST['telefono']
+    horario=request.POST['horarios']
+    servicios=request.POST['servicios']
+    lug = Lugar(nombre=nombre, cantidad_de_cancha=cantidad, tipo_de_cancha = tipo, servicios = servicios, telefono=telefono, horario=horario)
+    lug.save()    
     return render (request, 'Lugar.html')
 
-def Createusers (request):
+def createusers (request):
     name=request.POST["usuario"]
     password=request.POST["contrasenia"]
     mail=request.POST["email"]

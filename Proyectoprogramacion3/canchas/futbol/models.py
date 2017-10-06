@@ -6,10 +6,10 @@ from django.db import models
 class Lugar(models.Model):
     nombre = models.CharField(max_length=30, null=False)
     cantidad_de_cancha = models.IntegerField(null=False)
-    tipo_de_cancha = models.IntegerField(null=False)
-    servicios = models.CharField(max_length=30, null=False)
+    tipo_de_cancha = models.CharField(max_length=200, null=False)
+    servicios = models.CharField(max_length=500, null=False)
     telefono = models.IntegerField(null=False)
-    horario = models.IntegerField()
+    horario = models.CharField(max_length=100, null=False)
     
 
 class Cancha(models.Model):

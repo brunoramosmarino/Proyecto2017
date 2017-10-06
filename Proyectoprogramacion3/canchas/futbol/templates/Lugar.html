@@ -65,11 +65,13 @@
             <br>
             <br>
             <br>
+            <form action="{% url 'crearlugar' %} "method="POST">
+                    {% csrf_token %}
             <div  class="row">
                 <from class="col s12 offset-s3">
                     <div class="input-field col s6">
                             <i class="material-icons prefix">account_circle</i>
-                        <input align="center" id="Nombre_de_lugar" type="text" class="validate" name="Nombre_de_lugar" data-length="20">
+                        <input align="center" id="Nombre_de_lugar" type="text" class="validate" name="nombre_de_lugar" data-length="20">
                         <label for="username">Nombre del Lugar</label>
                     </div> 
                 
@@ -85,7 +87,7 @@
                 <from class="col s12 offset-s3">
                     <div class="input-field col s6">
                             <i class="material-icons prefix">lock</i>
-                            <input align="right" id="Tipo_de_canchas" type="text" class="validate" name="Tipo_de_canchas" data-length="30">
+                            <input align="right" id="Tipo_de_canchas" type="text" class="validate" name="tipo_de_canchas" data-length="30">
                         <label for="password">Tipo de canchas</label>
                     </div>
                 </from>
@@ -93,7 +95,7 @@
                 <from class="col s12 offset-s3">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">phone</i>
-                        <input align="right" id="Telefono" type="text" class="validate" name="Telefono">
+                        <input align="right" id="Telefono" type="text" class="validate" name="telefono">
                         <label for="email">Telefono</label>
                     </div>  
 
@@ -110,7 +112,7 @@
                 <from class="col s12 offset-s3">
                     <div class="input-field col s6">
                             <i class="material-icons prefix">lock</i>
-                            <input align="right" id="Servicios" type="text" class="validate" name="Servicios" data-length="30">
+                            <input align="right" id="Servicios" type="text" class="validate" name="servicios" data-length="30">
                         <label for="password">Servicios</label>
                     </div>    
                     
@@ -120,7 +122,7 @@
                 <i class="tiny material-icons right">person_add</i>
               </button></center>
         </form>
-      
+    </form>
 
     </body>
     <script>
