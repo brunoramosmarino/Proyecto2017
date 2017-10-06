@@ -25,6 +25,8 @@ def Inicio(request):
     return render(request , 'inicio.html')
 
 def Createuser(request):
+    lug = Lugar(nombre="Lol 3", cantidad_de_cancha=89, tipo_de_cancha = 1, servicios = "La Dota", telefono=1321654)
+    lug.save()
     return render (request, 'createuser.html')
 
 def Lugar(request):
@@ -34,7 +36,6 @@ def Createusers (request):
     name=request.POST["usuario"]
     password=request.POST["contrasenia"]
     mail=request.POST["email"]
-    print name + password
     user = User.objects.create_user(name, password, mail)
     user.save()
     return render (request, 'createuser.html')
