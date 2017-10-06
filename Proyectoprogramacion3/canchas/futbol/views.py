@@ -25,6 +25,8 @@ def Inicio(request):
     return render(request , 'inicio.html')
 
 def Createuser(request):
+    lug = Lugar(nombre="Lol 3", cantidad_de_cancha=89, tipo_de_cancha = 1, servicios = "La Dota", telefono=1321654)
+    lug.save()
     return render (request, 'createuser.html')
 
 def Createusers (request):
