@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^$', Createuser),
     url(r'^inicio/', Inicio),
     url(r'^hola/$', Createusers,name='create'),
+    
 ]

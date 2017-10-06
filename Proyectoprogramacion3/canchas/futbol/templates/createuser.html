@@ -9,54 +9,64 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <!--Import materialize.css-->
+          <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+          
     
     </head>
 
-    <body>
-      <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Logo</a>
-
-    </div>
+    <body class=" teal darken-3">
+    <nav>
+        <div class="nav-wrapper deep-orange accent-2">
+            <a href="#" class="brand-logo center">Play Futbol</a>
+            <ul class="left hide-on-med-and-down">
+            <li><a href="collapsible.html"><i class="material-icons left">reply</i>Salir</a></li>
+            </ul>
+        </div>
     </nav>
-    <form action="{% url 'create'%}" method="POST">
-        {% csrf_token %}
-        <div class="row">
-            
-            <from class="col s12">
-                
-                <div class="input-field col s6">
-                    <input id="username" type="text" class="validate" name="usuario">
-                    <label for="username">Nombre de usuario</label>
-                </div>
-           
-                            </from>
-            <from class="col s12">
-                
-                <div class="input-field col s6">
-                    <input id="email" type="text" class="validate" name="email">
-                    <label for="email">Email</label>
-                </div>
-           
-                            </from>
-            
-        </div>
     
-        <div class="row">
-            
-            <from class="col s12">
+    <center><form action="{% url 'create'%}" method="POST">
+            {% csrf_token %}
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div  class="row">
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                        <input align="center" id="username" type="text" class="validate" name="usuario" data-length="20">
+                        <label for="username">Nombre de usuario</label>
+                    </div> 
                 
-                <div class="input-field col s6">
-                    <input id="password" type="password" class="validate" name="contraseña">
-                    <label for="password">Contraseña</label>
-                </div>
-            </from>
+                </from>
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">email</i>
+                        <input align="right" id="email" type="text" class="validate" name="email">
+                        <label for="email">Email</label>
+                    </div>     
+                
+                </from>
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">lock</i>
+                            <input align="right" id="password" type="password" class="validate" name="contraseña" data-length="30">
+                        <label for="password">Contraseña</label>
+                    </div>
+                </from>
             
-        </div>
-        <input class="waves-effect waves-light btn green" value="Crear" type="submit">
-    </form>
-        
-    </body>
+            </div>
+            
+        <center><button class="btn waves-effect waves-light cyan darken-3" type="submit" value="Crear" name="action">Crear
+                <i class="tiny material-icons right">person_add</i>
+              </button></center>
+
+            </body>
 
 
 
