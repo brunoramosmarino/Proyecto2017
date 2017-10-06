@@ -31,7 +31,7 @@ def Createusers (request):
     name=request.POST["usuario"]
     password=request.POST["contrasenia"]
     mail=request.POST["email"]
-    print name + password
     user = User.objects.create_user(name, password, mail)
     user.save()
     return render (request, 'createuser.html')
+    
