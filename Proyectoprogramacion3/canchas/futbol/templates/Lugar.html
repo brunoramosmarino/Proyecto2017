@@ -1,0 +1,148 @@
+<html>
+    <head>
+          <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <!-- icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+
+        .brand-logo{
+	font-weight:900;
+}
+
+.dropdown-content {
+  background-color: " ";
+  margin: 0;
+  display: none;
+  min-width: 300px; /* Changed this to accomodate content width */
+  max-height: auto;
+	margin-left: -1px; /* Add this to keep dropdown in line with edge of navbar */
+  overflow: hidden; /* Changed this from overflow-y:auto; to overflow:hidden; */
+  opacity: 0;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+  will-change: width, height;
+}
+
+
+.parallax-container {
+      height: "your height here";
+    }
+        </style>
+  
+</head>
+    <body class=" teal darken-3">
+
+
+    <div class="navbar-fixed">      
+      <nav class="grey darken-4">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo center"><i class="medium material-icons"></i>Play Futbol</a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="collapsible.html"><i class="material-icons left">reply</i>Salir</a></li>
+                    </ul>                        
+            </div>
+          </nav>
+      </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <form action="{% url 'crearlugar' %} "method="POST">
+                    {% csrf_token %}
+            <div  class="row">
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                        <input align="center" id="Nombre_de_lugar" type="text" class="validate" name="nombre_de_lugar" data-length="20">
+                        <label for="username">Nombre del Lugar</label>
+                    </div> 
+                
+                </from>
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">email</i>
+                        <input align="right" id="cantidad_de_canchas" type="text" class="validate" name="cantidad_de_canchas">
+                        <label for="email">cantidad de canchas</label>
+                    </div>     
+                
+                </from>
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">lock</i>
+                            <input align="right" id="Tipo_de_canchas" type="text" class="validate" name="tipo_de_canchas" data-length="30">
+                        <label for="password">Tipo de canchas</label>
+                    </div>
+                </from>
+            
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">phone</i>
+                        <input align="right" id="Telefono" type="text" class="validate" name="telefono">
+                        <label for="email">Telefono</label>
+                    </div>  
+
+                </from>
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">lock</i>
+                            <input align="right" id="horarios" type="text" class="validate" name="horarios" data-length="30">
+                        <label for="password">Horarios</label>
+                    </div>
+                
+
+                </from>
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">lock</i>
+                            <input align="right" id="Servicios" type="text" class="validate" name="servicios" data-length="30">
+                        <label for="password">Servicios</label>
+                    </div>    
+                    
+            </div>
+            
+        <center><button class="btn waves-effect waves-light cyan darken-3" type="submit" value="Crear" name="action">Crear
+                <i class="tiny material-icons right">person_add</i>
+              </button></center>
+        </form>
+    </form>
+
+    </body>
+    <script>
+          $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
+    $('.dropdown-button').dropdown({
+      inDuration: 500,
+      outDuration: 400,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+
+    
+
+      </script>
+</html>
