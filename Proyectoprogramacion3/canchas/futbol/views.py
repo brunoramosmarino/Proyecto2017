@@ -3,14 +3,15 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
+from .models import *
 # Create your views here.
-<<<<<<< HEAD
-def Inicio(request):
-=======
-
 def inicio(request):
->>>>>>> 95521ea7a9ec20dca12417ac57e25c6eddb78935
-    return render(request , 'inicio.html')
+    try:
+        lugares = Lugar.objects.all().order_by('nombre')
+    except:
+        lugares=None
+        print "Error al cargar los lugares"
+    return render(request , 'inicio.html', {'todos_los_lugares':lugares})
 
 def createuser(request):
 
@@ -33,7 +34,6 @@ def createusers (request):
     name=request.POST["usuario"]
     password=request.POST["contraseña"]
     mail=request.POST["email"]
-<<<<<<< HEAD
     print name + password
     user = User.objects.create_user(username=name, password=password, email=mail)
     user.save()
@@ -41,9 +41,3 @@ def createusers (request):
 
 
      
-=======
-    user = User.objects.create_user(name, password, mail)
-    user.save()
-    return render (request, 'createuser.html')
-
->>>>>>> 95521ea7a9ec20dca12417ac57e25c6eddb78935

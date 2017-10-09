@@ -77,13 +77,13 @@
       <div class="parallax-container">
         <div class="parallax"><img src="https://cde.peru.com/ima/0/1/0/1/3/1013235/924x530/mejores-10.jpg"></div>
       </div>
-
+      {% for lugar in todos_los_lugares %}
       <div class="row">
         <div class="col s8 m4">
           <div class="card hoverable">
             <div class="card-image">
               <img src="https://lh3.googleusercontent.com/-P7YFY6_rKJc/Vcn-ePNDtHI/AAAAAAAATgQ/5GjgwggnQQo/s0-d/ae43451b61.png">
-              <span class="card-title">Futbol</span>
+              <span class="card-title">{{ lugar.nombre }}</span>
               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
             </div>
             <div class="card-content">
@@ -91,7 +91,7 @@
            </div>
             </div>
           </div>
-
+          {% endfor %}
      
     </body>
     <script>
