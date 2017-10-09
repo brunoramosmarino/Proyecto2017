@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^secreousuario/$', createusers,name='create'),
     url(r'^crearlugar/', lugar),
     url(r'^secreocancha/', createlugar, name="crearlugar"),
-
+    url(r'^Crearcanchas/', crearcanchas),
+    url(r'^Login/', login),
 ]

@@ -30,6 +30,16 @@ def createuser(request):
 
 def lugar(request):
     return render (request, 'Lugar.html')
+
+def crearcanchas(request):
+    return render (request, 'Crearcanchas.html')
+
+
+def login(request):
+    return render (request, 'Login.html')
+
+
+
 def createlugar(request):
     nombre=request.POST['nombre_de_lugar']
     cantidad=request.POST['cantidad_de_canchas']

@@ -20,16 +20,15 @@
 
     <body class=" teal darken-3">
     <nav>
-        <div class="nav-wrapper deep-orange accent-3">
+        <div class="nav-wrapper red darken-3">
             <a href="#" class="brand-logo center">Play Futbol</a>
-            <ul class="left hide-on-med-and-down">
-            <li><a href="collapsible.html"><i class="material-icons left">reply</i>Salir</a></li>
-            </ul>
         </div>
     </nav>
     
     <center><form action="{% url 'create'%}" method="POST">
             {% csrf_token %}
+            <br>
+            <br>
             <br>
             <br>
             <br>
@@ -46,14 +45,6 @@
                 </from>
                 <from class="col s12 offset-s3">
                     <div class="input-field col s6">
-                        <i class="material-icons prefix">email</i>
-                        <input align="right" id="email" type="text" class="validate" name="email">
-                        <label for="email">Email</label>
-                    </div>     
-                
-                </from>
-                <from class="col s12 offset-s3">
-                    <div class="input-field col s6">
                             <i class="material-icons prefix">lock</i>
                             <input align="right" id="password" type="password" class="validate" name="contrasenia" data-length="30">
                         <label for="password">Contraseña</label>
@@ -62,9 +53,13 @@
 
 
                 
-        <center><button class="btn waves-effect waves-light cyan darken-3" type="submit" value="Crear" name="action">Crear
+        <center><button class="btn waves-effect waves-light cyan darken-3" type="submit" value="" name="">Ingresar
+                <i class="tiny material-icons right">check_circle</i>
+              </button>
+              <button class="btn waves-effect waves-light cyan darken-3" type="submit" value="" name="">Registrarse
                 <i class="tiny material-icons right">person_add</i>
               </button></center>
+        
         </div>
         </form>
             </body>
