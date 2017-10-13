@@ -18,11 +18,12 @@ from django.contrib import admin
 from futbol.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name='admin'),
-    url(r'^$', createuser),
-    url(r'^inicio/', inicio),
+    url(r'^crearusuario', createuser, name='createuser'),
+    url(r'^inicio/', inicio, name='inicio'),
     url(r'^secreousuario/$', createusers,name='create'),
-    url(r'^crearlugar/', lugar),
+    url(r'^crearlugar/', lugar, name='lugar'),
     url(r'^secreocancha/', createlugar, name="crearlugar"),
     url(r'^Crearcanchas/', crearcanchas),
-    url(r'^Login/', login),
+    url(r'^$', login, name='login'),
+
 ]

@@ -19,33 +19,8 @@
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <style>
-
-        .brand-logo{
-	font-weight:900;
-}
-
-.dropdown-content {
-  background-color: " ";
-  margin: 0;
-  display: none;
-  min-width: 300px; /* Changed this to accomodate content width */
-  max-height: auto;
-	margin-left: -1px; /* Add this to keep dropdown in line with edge of navbar */
-  overflow: hidden; /* Changed this from overflow-y:auto; to overflow:hidden; */
-  opacity: 0;
-  position: absolute;
-  white-space: nowrap;
-  z-index: 1;
-  will-change: width, height;
-}
 
 
-.parallax-container {
-      height: "your height here";
-    }
-        </style>
-  
 </head>
     <body class=" teal darken-3">
 
@@ -55,7 +30,7 @@
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo center"><i class="medium material-icons"></i>Play Futbol</a>
                 <ul class="left hide-on-med-and-down">
-                    <li><a href="collapsible.html"><i class="material-icons left">reply</i>Salir</a></li>
+                    <li><a href="{%url "lugar"%}"><i class="material-icons left">reply</i>Salir</a></li>
                     </ul>                        
             </div>
           </nav>
@@ -66,14 +41,6 @@
             <form action="{% url 'crearlugar' %} "method="POST">
                     {% csrf_token %}
             <div  class="row">
-                <from class="col s12 offset-s3">
-                    <div class="input-field col s6">
-                            <i class="material-icons prefix">account_circle</i>
-                        <input align="center" id="Nombre_de_lugar" type="text" class="validate" name="nombre_de_lugar" data-length="20">
-                        <label for="username">Nombre del Lugar</label>
-                    </div> 
-                
-                </from>
                 <from class="col s12 offset-s3">
                     <div class="input-field col s6">
                         <i class="material-icons prefix">queue</i>
@@ -87,33 +54,14 @@
                             <i class="material-icons prefix">info_outline</i>
                             <input align="right" id="Tipo_de_canchas" type="text" class="validate" name="tipo_de_canchas" data-length="30">
                         <label for="password">Tipo de canchas</label>
-                    </div>
-                </from>
-            
-                <from class="col s12 offset-s3">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">phone</i>
-                        <input align="right" id="Telefono" type="text" class="validate" name="telefono">
-                        <label for="email">Telefono</label>
-                    </div>  
-
-                </from>
-                <from class="col s12 offset-s3">
-                    <div class="input-field col s6">
-                            <i class="material-icons prefix">access_time</i>
-                            <input align="right" id="horarios" type="text" class="validate" name="horarios" data-length="30">
-                        <label for="password">Horarios</label>
-                    </div>
-                
-
-                </from>
-                <from class="col s12 offset-s3">
-                    <div class="input-field col s6">
-                            <i class="material-icons prefix">assignment</i>
-                            <input align="right" id="Servicios" type="text" class="validate" name="servicios" data-length="30">
-                        <label for="password">Servicios</label>
                     </div>    
-                    
+                </from>
+                <from class="col s12 offset-s3">
+                    <div class="input-field col s6">
+                            <i class="material-icons prefix">info_outline</i>
+                            <input align="right" id="Tipo_de_canchas" type="text" class="validate" name="tipo_de_canchas" data-length="30">
+                        <label for="password">Precios</label>
+                    </div>  
             </div>
             
         <center><button class="btn waves-effect waves-light cyan darken-3" type="submit" value="Crear" name="action">Crear

@@ -49,5 +49,4 @@ def createusers (request):
     user.save()
     return HttpResponse("Funca")
 
-
      

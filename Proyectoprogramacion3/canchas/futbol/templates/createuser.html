@@ -23,12 +23,12 @@
         <div class="nav-wrapper deep-orange accent-3">
             <a href="#" class="brand-logo center">Play Futbol</a>
             <ul class="left hide-on-med-and-down">
-            <li><a href="collapsible.html"><i class="material-icons left">reply</i>Salir</a></li>
+            <li><a href="{%url "login"%}"><i class="material-icons left">reply</i>Salir</a></li>
             </ul>
         </div>
     </nav>
     
-    <center><form action="{% url 'create'%}" method="POST">
+    <form action="{% url 'create'%}" method="POST">
             {% csrf_token %}
             <br>
             <br>
