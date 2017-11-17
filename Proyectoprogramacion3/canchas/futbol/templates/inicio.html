@@ -63,7 +63,7 @@
     <div class="navbar-fixed">      
       <nav class="teal darken-3">
             <div class="nav-wrapper">
-                <a href="{%url "inicio"%}" class="brand-logo center"><i class="medium material-icons"></i>Play Futbol</a>
+                <a href="{%url "inicio"%}" class="brand-logo center"><i class="medium material-icons"></i>King of Soccer</a>
                 <ul class="left hide-on-med-and-down">
               <li><a href="mobile.html" class="dropdown-button" data-activates='dropdown1' ><i class="material-icons">menu</i></a></li>
              </ul>                             
@@ -83,9 +83,10 @@
       <div class="parallax-container">
         <div class="parallax"><img src="http://todoimagenes.co/wp-content/uploads/2012/06/portada-selecci%C3%B3n-argentina-de-futbol.jpg"></div>
       </div>
+      <div class="row" >
       {% for lugar in todos_los_lugares %}
-      <div class="row">
-        <div class="col s8 m4">
+      
+        <div class="col s8 m4 searchable" data-nombre="{{lugar.nombre}}">
           <div class="card hoverable">
             <div class="card-image">
               <img src="https://lh3.googleusercontent.com/-P7YFY6_rKJc/Vcn-ePNDtHI/AAAAAAAATgQ/5GjgwggnQQo/s0-d/ae43451b61.png">
@@ -95,10 +96,11 @@
             <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
            </div>
-            </div>
+            
           </div>
+        </div>
           {% endfor %}
-     
+        </div>
     </body>
     <script>
           $(document).ready(function(){
@@ -118,6 +120,18 @@
     }
   );
 
+
+    $(document).on("keyup","#search",function(){
+      var name_inserted = $("#search").val();      
+      $(".searchable").each(function(){                
+        if ($(this).data("nombre").includes(name_inserted)){          
+          $(this).fadeIn(1000);
+        }else{          
+          $(this).fadeOut(2000);
+        }
+      });
+
+    });
     
 
       </script>
